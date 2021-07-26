@@ -1,14 +1,14 @@
 name: 'Random Emojii'
 description: 'Update a line of text in the README with an emojii'
 inputs:
-  token:
-    description: 'token for interactivity'
-    required: false
-    default: ${{ github.token }}
   list_of_emojiis: # list of emojiis to randomly select from
     description: 'string of emojiis to choose from'
     required: false
     default: '🍎🌶🍜🏀🏆😀😱😤'
+  gh_base_url: # base url for github repo to create emojii
+    description: "Base url to create PR for triggering emojii change in README"  
+    required: false
+    default: ${{ github.repository }}
 outputs:
   randomURL: 
     description: 'URL associated with the next emojii generation'
