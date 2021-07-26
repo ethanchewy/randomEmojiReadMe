@@ -7,7 +7,7 @@ inputs:
     default: ${{ github.token }}
   listOfEmojiis: # list of emojiis to randomly select from
     description: 'string of emojiis to choose from'
-    default: '🍎🌶🍜🏀🏆😀😱😤`
+    default: '🍎🌶🍜🏀🏆😀😱😤'
 runs:
   using: 'node12'
   main: 'dist/index.js'
