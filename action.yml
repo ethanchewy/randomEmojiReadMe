@@ -1,13 +1,17 @@
 name: 'Random Emojii'
 description: 'Update a line of text in the README with an emojii'
 inputs:
-  token:  # github token for updating readme
-    description: 'Token for intereacting with a repository'
-    required: true
+  token:
+    description: 'token for interactivity'
+    required: false
     default: ${{ github.token }}
-  listOfEmojiis: # list of emojiis to randomly select from
+  list_of_emojiis: # list of emojiis to randomly select from
     description: 'string of emojiis to choose from'
+    required: false
     default: '🍎🌶🍜🏀🏆😀😱😤'
+outputs:
+  randomURL: 
+    description: 'URL associated with the next emojii generation'
 runs:
   using: 'node12'
   main: 'dist/index.js'

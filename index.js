@@ -1,18 +1,21 @@
 const core = require('@actions/core');
+const github = require('@actions/github');
 const wait = require('./wait');
 
 
 // most @actions toolkit packages have async methods
 async function run() {
   try {
-    const ms = core.getInput('milliseconds');
-    core.info(`Waiting ${ms} milliseconds ...`);
+    const emojii_list_string = core.getInput('list_of_emojiis');
+    const octokit = getOctokit(token);
 
-    core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-    await wait(parseInt(ms));
-    core.info((new Date()).toTimeString());
+    // Select random emojii from list
+    const chosen_emojii = emojii_list[Math.floor(Math.random() * emojii_list_string.length)]
 
-    core.setOutput('time', new Date().toTimeString());
+    // Construct URL
+    // let base_url = octokit.
+
+    core.setOutput('random_url', new Date().toTimeString());
   } catch (error) {
     core.setFailed(error.message);
   }
