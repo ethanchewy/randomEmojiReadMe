@@ -2,9 +2,9 @@ name: 'Random Emojii'
 description: 'Update a line of text in the README with an emojii'
 inputs:
   list_of_emojiis: # list of emojiis to randomly select from
-    description: 'string of emojiis to choose from'
+    description: 'string of emojiis to choose from seperated by a space'
     required: false
-    default: '🍎🌶🍜🏀🏆😀😱😤'
+    default: '🍎 🌶 🍜 🏀 🏆 😀 😱 😤'
   gh_base_url: # base url for github repo to create emojii
     description: "Base url to create PR for triggering emojii change in README"  
     required: false
