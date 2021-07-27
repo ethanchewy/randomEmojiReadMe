@@ -10,7 +10,7 @@ inputs:
     required: false
     default: ${{ github.repository }}
 outputs:
-  randomURL: 
+  random_url: 
     description: 'URL associated with the next emojii generation'
 runs:
   using: 'node12'
